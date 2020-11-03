@@ -15,16 +15,12 @@ client.on('ready', (e) => {
 })
 
 client.on('voiceStateUpdate', (oldState, newState) => {
-    const { channel } = newState
-    const { member } = newState
-
     const oldName = oldState?.channel?.name || null
+    const newName = newState?.channel?.name || null
 
-    if (channel.name && channel.name != oldName) {
-        const { name } = channel
-
-        if (listOfNerdNames.includes(name.toLowerCase())) {
-            member.send('Stop being a nerd')
+    if (!!newName && newName != oldName) {
+        if (listOfNerdNames.includes(newName.toLowerCase())) {
+            newState.member?.send('Stop being a nerd')
         }
     }
 })
