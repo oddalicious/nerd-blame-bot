@@ -14,11 +14,13 @@ client.on('ready', (e) => {
     console.info(`Logged in as: ${client.user.tag}`)
 })
 
-client.on('voiceStateUpdate', (_oldState, newState) => {
+client.on('voiceStateUpdate', (oldState, newState) => {
     const { channel } = newState
     const { member } = newState
 
-    if (channel.name) {
+    const oldName = oldState?.channel?.name || null
+
+    if (channel.name && channel.name != oldName) {
         const { name } = channel
 
         if (listOfNerdNames.includes(name.toLowerCase())) {
