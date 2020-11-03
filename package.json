@@ -1,0 +1,25 @@
+{
+    "name": "nerd-blame-bot",
+    "version": "0.0.1",
+    "description": "Bot that pings you and calls you a nerd when you enter a voice chat.",
+    "main": "index.js",
+    "author": "Tim Patullock",
+    "type": "module",
+    "dependencies": {
+        "beautify": "0.0.8",
+        "discord.js": "^12.2.0",
+        "dotenv": "^8.2.0"
+    },
+    "scripts": {
+        "start": "node --experimental-json-modules index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oddalicious/nerd-blame-bot.git"
+    },
+    "keywords": [
+        "heroku",
+        "discord.js"
+    ]
+}
